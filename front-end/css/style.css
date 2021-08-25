@@ -3,28 +3,63 @@ body {
   background-color: #c7c6c6;
 }
 
+/*Header*/
 header {
   width: 100%;
-  height: 150px;
-  border: 1px solid transparent;
+  height: 130px;
   background-image: url(../font/font.png);
   background-repeat: repeat-x;
+  position: relative;
 }
 
-h1 {
+.logoOricam {
   font-family: 'Sarpanch', sans-serif;
   color: white;
-  margin-left: 15px;
+  margin-left: 1%;
+  margin-top: 1%;
   font-size: 50px;
+  position: absolute;
 }
 
-h2 {
+@media screen and (max-width: 768px) {
+  .logoOricam {
+    font-size: 30px;
+  }
+}
+
+.sloganOricam {
   font-family: 'Give You Glory', cursive;
-  font-size: 40px;
+  font-size: 38px;
+  margin-top: 1%;
   color: white;
+  width: 40%;
   position: absolute;
-  left: 600px;
+  left: 30%;
   top: 15px;
+}
+
+@media screen and (max-width: 1750px) {
+  .sloganOricam {
+    font-size: 35px;
+  }
+}
+
+@media screen and (max-width: 1750px) {
+  .sloganOricam {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sloganOricam {
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .sloganOricam {
+    opacity: 0;
+  }
 }
 
 .navIcon {
@@ -32,20 +67,31 @@ h2 {
   color: white;
   position: absolute;
   right: 30px;
-  top: 30px;
+  top: 20%;
 }
 
+@media screen and (max-width: 480px) {
+  .navIcon {
+    font-size: 40px;
+  }
+}
+
+/*Photos*/
 #fontPhotos {
   width: 100%;
   height: 200px;
-  border: 1px solid black;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 img {
-  margin: -2px;
   padding: 0px;
+  margin-right: -3px;
 }
 
+/*Section*/
 #mainContent {
   width: 100%;
   height: 1000px;
@@ -57,43 +103,89 @@ img {
 @media screen and (max-width: 480px) {
   #mainContent {
     flex-direction: column;
+    height: 2700px;
   }
 }
 
 section {
-  width: 70%;
+  width: 75%;
   height: auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: left;
-  margin-left: 5%;
-  margin-right: 5%;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 1350px) {
+  section {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  section {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  section {
+    flex-direction: column;
+    width: 99%;
+  }
+}
+
+.imageProduit {
+  width: 30%;
+  min-width: 300px;
+  height: 30%;
+  min-height: 300px;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-top: 15px;
+  margin-right: 1%;
+  margin-left: 1%;
+}
+
+@media screen and (max-width: 768px) {
+  .imageProduit {
+    width: 95%;
+    height: 300px;
+  }
 }
 
 aside {
-  width: 23%;
-  height: 700px;
+  width: 25%;
+  height: 800px;
   border: 5px solid #311010;
   margin-top: 15px;
-  margin-right: 5%;
-  padding: 5px;
   border-radius: 15px;
+  background-image: url("../front-end/font/pellicule.jpg");
+  background-repeat: repeat-x;
+  position: relative;
+}
+
+@media screen and (max-width: 768px) {
+  aside {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  aside {
+    width: 95%;
+  }
 }
 
 aside img {
   width: 100%;
-  margin-top: 200px;
+  position: absolute;
+  bottom: 0%;
 }
 
-.imageProduit {
-  width: 29%;
-  height: 350px;
-  border: 1px solid black;
-  border-radius: 10px;
-  margin-top: 15px;
-  margin-left: 25px;
-  margin-right: 25px;
+#textAside {
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 footer {
@@ -101,6 +193,13 @@ footer {
   height: 150px;
   background-image: url(../font/font.png);
   background-repeat: repeat-x;
+}
+
+@media screen and (max-width: 900px) {
+  footer {
+    height: 190px;
+    margin-bottom: 0%;
+  }
 }
 
 .footerList {
@@ -126,7 +225,7 @@ footer {
 }
 
 .footerList a:hover {
-  font-weight: bold;
+  text-decoration: underline;
 }
 
 .footerIcons {
