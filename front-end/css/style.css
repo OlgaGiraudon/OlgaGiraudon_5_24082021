@@ -94,21 +94,51 @@ img {
 /*Section*/
 #mainContent {
   width: 100%;
-  height: 1000px;
+  height: auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 600px) {
   #mainContent {
     flex-direction: column;
-    height: 2700px;
   }
 }
 
-section {
+#sectionPagedaccueil {
   width: 75%;
+}
+
+@media screen and (max-width: 845px) {
+  #sectionPagedaccueil {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #sectionPagedaccueil {
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+#titreSection {
+  width: 50%;
+  margin-left: 1%;
+}
+
+@media screen and (max-width: 768px) {
+  #titreSection {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+#gridProduits {
+  width: 100%;
   height: auto;
   display: flex;
   flex-direction: row;
@@ -117,21 +147,15 @@ section {
 }
 
 @media screen and (max-width: 1350px) {
-  section {
-    justify-content: center;
+  #gridProduits {
+    justify-content: space-around;
   }
 }
 
-@media screen and (max-width: 768px) {
-  section {
-    width: 50%;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  section {
+@media screen and (max-width: 600px) {
+  #gridProduits {
     flex-direction: column;
-    width: 99%;
+    justify-content: center;
   }
 }
 
@@ -147,10 +171,18 @@ section {
   margin-left: 1%;
 }
 
+@media screen and (max-width: 845px) {
+  .imageProduit {
+    width: 80%;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .imageProduit {
     width: 95%;
     height: 300px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -165,15 +197,17 @@ aside {
   position: relative;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 845px) {
   aside {
-    width: 50%;
+    width: 40%;
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 600px) {
   aside {
     width: 95%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -215,6 +249,19 @@ footer {
   margin-right: 250px;
 }
 
+@media screen and (max-width: 768px) {
+  .footerList ul {
+    margin-right: 120px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footerList ul {
+    margin-right: 30px;
+    font-size: 18px;
+  }
+}
+
 .footerList li {
   margin-bottom: 10px;
 }
@@ -244,4 +291,37 @@ footer {
 .footerIcon {
   font-size: 25px;
   color: white;
+}
+
+/*Page Produits*/
+#descriptionProduit h2 {
+  margin-left: 5%;
+}
+
+#productMain {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+@media screen and (max-width: 715px) {
+  #productMain {
+    flex-direction: column;
+  }
+}
+
+#prodImage {
+  width: 500px;
+  height: 500px;
+  border: 1px solid black;
+  margin-left: 5%;
+}
+
+#photoOfProduct p {
+  margin-left: 5%;
+  margin-right: 2%;
+}
+
+#productCaract {
+  margin-left: 5%;
 }

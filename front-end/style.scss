@@ -11,7 +11,7 @@ header {
     background-repeat: repeat-x;
     position: relative;
 }
-.logoOricam{
+.logoOricam {
     font-family: 'Sarpanch', sans-serif;
     color: white;
     margin-left: 1%;
@@ -22,8 +22,7 @@ header {
         font-size: 30px;
     }
 }
-.sloganOricam
-{
+.sloganOricam {
     font-family: 'Give You Glory', cursive;
     font-size: 38px;
     margin-top: 1%;
@@ -45,7 +44,7 @@ header {
         opacity: 0;
     }
 }
-.navIcon{
+.navIcon {
     font-size: 50px;
     color: white;
     position: absolute;
@@ -65,39 +64,66 @@ header {
     flex-direction: row;
     justify-content: space-between;
 }
-img{
+img
+{
     padding: 0px;
     margin-right: -3px;
 }
 /*Section*/
-#mainContent{
+#mainContent
+{
     width: 100%;
-    height: 1000px;
+    height: auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    @media screen and (max-width: 480px) {
+   
+   
+    @media screen and (max-width: 600px) {
         flex-direction: column;
-        height: 2700px;
+
     }
 }
-section{
+#sectionPagedaccueil{
     width: 75%;
+
+    @media screen and (max-width: 845px) {
+
+    width: 60%;
+    }
+    @media screen and (max-width: 600px){
+        width: 98%;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+
+}
+#titreSection
+{
+    width: 50%;
+    margin-left: 1%;
+    @media screen and (max-width: 768px) {
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+#gridProduits {
+    width: 100%;
     height: auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
     @media screen and (max-width: 1350px) {
-        justify-content: center;
+        justify-content: space-around;
     }
-    @media screen and (max-width: 768px) {
-
-        width: 50%;
-    }
-    @media screen and (max-width: 480px) {
+    
+    @media screen and (max-width: 600px) {
         flex-direction: column;
-        width: 99%;
+        justify-content: center;
+
     }
 }
 .imageProduit
@@ -111,9 +137,14 @@ section{
      margin-top: 15px;
      margin-right: 1%;
      margin-left: 1%;
+     @media screen and (max-width: 845px) {
+         width: 80%;
+     }
      @media screen and (max-width: 768px) {
         width: 95%;
         height: 300px;
+        margin-left: auto;
+        margin-right: auto;
     }
  }
 aside
@@ -127,11 +158,13 @@ aside
     background-repeat: repeat-x;
     position: relative;
     
-    @media screen and (max-width: 768px) {
-        width: 50%;
+    @media screen and (max-width: 845px) {
+        width: 40%;
     }
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 600px) {
         width: 95%;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 aside img{
@@ -169,7 +202,13 @@ footer
     color: white;
     font-size: 20px;
     margin-right: 250px;
-   
+    @media screen and (max-width: 768px) {
+        margin-right: 120px;
+    }
+    @media screen and (max-width: 480px) {
+        margin-right: 30px;
+        font-size: 18px;
+    }
 }
 .footerList li
 {
@@ -203,4 +242,34 @@ footer
     color: white;
     
 }
+/*Page Produits*/
+#descriptionProduit h2
+{
+    margin-left: 5%;
 
+}
+#productMain{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    @media  screen and (max-width:715px) {
+        flex-direction: column;
+        
+    }
+}
+#prodImage
+{
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+    margin-left: 5%;
+}
+#photoOfProduct p 
+{
+    margin-left: 5%;
+    margin-right: 2%;
+}
+#productCaract
+{
+    margin-left: 5%;
+}
