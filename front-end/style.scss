@@ -246,6 +246,13 @@ footer
     
 }
 /*Page Produits*/
+a:visited{
+    color: white;
+    
+}
+a {
+    text-decoration: none;
+}
 #descriptionProduit h2
 {
     margin-left: 5%;
@@ -263,8 +270,6 @@ footer
 #prodImage
 {
     width: 500px;
-    height: 500px;
-    border: 1px solid black;
     margin-left: 5%;
 }
 #photoOfProduct p 

@@ -10,11 +10,12 @@
         <link href="https://fonts.googleapis.com/css2?family=Aguafina+Script&family=Give+You+Glory&family=Sarpanch:wght@500&display=swap" rel="stylesheet"> 
         <link rel="stylesheet" href="css/style.css">
         <script src="https://kit.fontawesome.com/adf2835bfe.js" crossorigin="anonymous"></script>
+        <script src="js/product.js" defer></script>
     </head>
 <body>
      <!--Header-->
   <header>
-    <h1 class="logoOricam">ORICAM</h1>
+    <h1 class="logoOricam"> <a href="index.html">ORICAM</a> </h1>
     <h2 class="sloganOricam">Le but de l'art est d'arrêter le temps...</h2>
     <i class="fas fa-cart-arrow-down navIcon"></i>
 </header>
@@ -30,20 +31,19 @@
     <img src="../front-end/font/vintage_camera.jpg" alt="Photo_noir_et_blanc_vintage_cameras">
 </div>
 <section id="descriptionProduit">
-    <h2>Here will be the name of product</h2>
+    <h2 id="product_name"></h2>
     <div id="productMain">
         <div id="photoOfProduct">
             <div id="prodImage">
-            Here will be the photo of the product
             </div>
-            <p>Here will be the product description(may be)</p>
+            <p id="product_description">Here will be the product description(may be)</p>
         </div>
         <div id="productCaract">
             <p>Sélectionnez la taille de l'objectif  </p>
             <select name="lentillesList" id="lent">
-                <option value="10">10</option>
-                <option value="15">15</option>
-                <option value="20">20</option>
+                <option value="first" ></option>
+                <option value="second"></option>
+                <option value="third"></option>
             </select>
             <p>Sélectionnez la quantité  </p>
             <select name="lentillesList" id="lent">
@@ -62,7 +62,7 @@
                 <option value="13">13</option>
             </select>
             <p>Prix /unité</p>
-            <input type="text">
+            <h3 id="product_price"></h3>
             <p>Total</p>
             <input type="text">
             <input type="submit" value="Acheter">

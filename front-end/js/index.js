@@ -21,11 +21,8 @@ function getProducts(adresseAPI, gridOfProducts){
 
     })
 }
-
-
 //Get the photos and show them on the main page
 getProducts(url, gridProduit);
-
 
 
 
