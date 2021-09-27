@@ -24,6 +24,8 @@ header {
 @media screen and (max-width: 768px) {
   .logoOricam {
     font-size: 30px;
+    margin-top: 5%;
+    margin-left: 5%;
   }
 }
 
@@ -107,7 +109,10 @@ img {
 }
 
 #sectionPagedaccueil {
-  width: 75%;
+  width: 70%;
+  border: 5px solid #2c2b2b;
+  margin-top: 15px;
+  border-radius: 15px;
 }
 
 @media screen and (max-width: 845px) {
@@ -116,7 +121,7 @@ img {
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   #sectionPagedaccueil {
     width: 98%;
     margin-left: auto;
@@ -127,13 +132,17 @@ img {
 #titreSection {
   width: 50%;
   margin-left: 1%;
+  font-size: 30px;
+  text-decoration: underline;
+  color: #2c2b2b;
 }
 
 @media screen and (max-width: 768px) {
   #titreSection {
-    width: 95%;
+    width: 99%;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
   }
 }
 
@@ -159,26 +168,36 @@ img {
   }
 }
 
-.imageProduit {
+@keyframes anim_image {
+  from {
+    translate: scaleY(0);
+  }
+  to {
+    translate: scaleY(1);
+  }
+}
+
+.divProduit {
   width: 30%;
   min-width: 300px;
   height: 30%;
   min-height: 300px;
-  border: 1px solid black;
+  border: 3px solid #2c2b2b;
   border-radius: 10px;
   margin-top: 15px;
   margin-right: 1%;
   margin-left: 1%;
+  position: relative;
 }
 
 @media screen and (max-width: 845px) {
-  .imageProduit {
+  .divProduit {
     width: 80%;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .imageProduit {
+  .divProduit {
     width: 95%;
     height: 300px;
     margin-left: auto;
@@ -187,7 +206,18 @@ img {
 }
 
 .nameProduit {
-  margin-left: 1%;
+  position: absolute;
+  background-color: #777575;
+  width: 100%;
+  height: 15%;
+  min-height: 30px;
+  bottom: 0%;
+}
+
+.nameProduit h3 {
+  color: black;
+  text-align: center;
+  margin-top: 10px;
 }
 
 aside {

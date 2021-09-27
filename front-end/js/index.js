@@ -11,17 +11,18 @@ function getProducts(adresseAPI, gridOfProducts){
         if(data){
         let imgHTML ='';
         for (let i in data){
-            imgHTML += '<div class="imageProduit"> '+
-                '<h3 class="nameProduit">' + data[i].name + '</h3>'+
-                '<a href="produit.html?id='+data[i]._id+'">'+
-                 '<img  src="' + data[i].imageUrl + '" alt="Photo of '+ data[i].name +'" width ="100%"  ></a></div>';
-        }
+            imgHTML = '<div class="divProduit">' +
+            '<img src="' + data[i].imageUrl + '" width ="100%" height = "265px">'+
+                '<div class="nameProduit"><a href ="produit.html?id='+ data[i]._id +'">'+
+                                '<h3>'+ data[i].name +'</h3></a></div>'+
+                '</div>';
+                
         gridOfProducts.innerHTML += imgHTML;
     }
 
-    })
+    };
+});
 }
-//Get the photos and show them on the main page
 getProducts(url, gridProduit);
 
 
