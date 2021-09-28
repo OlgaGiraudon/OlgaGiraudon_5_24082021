@@ -102,9 +102,15 @@ img {
   justify-content: space-between;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   #mainContent {
     flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  #mainContent {
+    width: 99%;
   }
 }
 
@@ -115,9 +121,21 @@ img {
   border-radius: 15px;
 }
 
-@media screen and (max-width: 845px) {
+@media screen and (max-width: 1394px) {
   #sectionPagedaccueil {
-    width: 60%;
+    width: 65%;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  #sectionPagedaccueil {
+    width: 58%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  #sectionPagedaccueil {
+    width: 55%;
   }
 }
 
@@ -137,12 +155,24 @@ img {
   color: #2c2b2b;
 }
 
+@media screen and (max-width: 980px) {
+  #titreSection {
+    text-align: center;
+  }
+}
+
 @media screen and (max-width: 768px) {
   #titreSection {
     width: 99%;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #titreSection {
+    width: 97%;
   }
 }
 
@@ -155,9 +185,15 @@ img {
   justify-content: left;
 }
 
-@media screen and (max-width: 1350px) {
+@media screen and (max-width: 1394px) {
   #gridProduits {
-    justify-content: space-around;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  #gridProduits {
+    justify-content: center;
   }
 }
 
@@ -168,20 +204,10 @@ img {
   }
 }
 
-@keyframes anim_image {
-  from {
-    translate: scaleY(0);
-  }
-  to {
-    translate: scaleY(1);
-  }
-}
-
 .divProduit {
   width: 30%;
   min-width: 300px;
   height: 30%;
-  min-height: 300px;
   border: 3px solid #2c2b2b;
   border-radius: 10px;
   margin-top: 15px;
@@ -190,19 +216,39 @@ img {
   position: relative;
 }
 
-@media screen and (max-width: 845px) {
+@media screen and (max-width: 1394px) {
+  .divProduit {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 980px) {
   .divProduit {
     width: 80%;
   }
 }
 
+@media screen and (max-width: 900px) {
+  .divProduit {
+    width: 90%;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .divProduit {
-    width: 95%;
+    width: 85%;
     height: 300px;
     margin-left: auto;
     margin-right: auto;
   }
+}
+
+.transparent:hover {
+  opacity: 75%;
+}
+
+.imageProduits {
+  object-fit: cover;
 }
 
 .nameProduit {
@@ -222,7 +268,7 @@ img {
 
 aside {
   width: 25%;
-  height: 800px;
+  height: 700px;
   border: 5px solid #311010;
   margin-top: 15px;
   border-radius: 15px;
@@ -231,43 +277,130 @@ aside {
   position: relative;
 }
 
-@media screen and (max-width: 845px) {
+@media screen and (max-width: 1394px) {
+  aside {
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  aside {
+    width: 35%;
+  }
+}
+
+@media screen and (max-width: 900px) {
   aside {
     width: 40%;
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   aside {
-    width: 95%;
+    width: 98%;
     margin-left: auto;
     margin-right: auto;
+    height: 400px;
   }
 }
 
-aside img {
+@media screen and (max-width: 600px) {
+  aside {
+    height: auto;
+  }
+}
+
+#AsideImageArea {
+  height: 40%;
   width: 100%;
   position: absolute;
   bottom: 0%;
 }
 
-#textAside {
-  margin-left: 5px;
-  margin-right: 5px;
+@media screen and (max-width: 1537px) {
+  #AsideImageArea {
+    height: 37%;
+  }
+}
+
+@media screen and (max-width: 1456px) {
+  #AsideImageArea {
+    height: 36%;
+  }
+}
+
+@media screen and (max-width: 1168px) {
+  #AsideImageArea {
+    height: 34%;
+  }
+}
+
+@media screen and (max-width: 1118px) {
+  #AsideImageArea {
+    height: 31%;
+  }
+}
+
+@media screen and (max-width: 1074px) {
+  #AsideImageArea {
+    height: 29%;
+  }
+}
+
+@media screen and (max-width: 1031px) {
+  #AsideImageArea {
+    height: 26%;
+  }
+}
+
+@media screen and (max-width: 1013px) {
+  #AsideImageArea {
+    height: 24%;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  #AsideImageArea {
+    height: 30%;
+  }
+}
+
+@media screen and (max-width: 920px) {
+  #AsideImageArea {
+    height: 29%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #AsideImageArea {
+    height: 0;
+    width: 0;
+  }
+}
+
+@media screen and (max-width: 663px) {
+  #infoOricam h2 {
+    margin-bottom: 3px;
+  }
+}
+
+#AsideImageArea img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.textAside {
+  margin-left: 10px;
+  margin-right: 10px;
+  text-align: justify;
 }
 
 footer {
   width: 100%;
-  height: 150px;
+  height: auto;
   background-image: url(../font/font.png);
   background-repeat: repeat-x;
-}
-
-@media screen and (max-width: 900px) {
-  footer {
-    height: 190px;
-    margin-bottom: 0%;
-  }
 }
 
 .footerList {
@@ -279,25 +412,32 @@ footer {
 .footerList ul {
   list-style: none;
   color: white;
-  font-size: 20px;
-  margin-right: 250px;
+  font-size: 21px;
+  display: flex;
+  flex-direction: row;
+  width: 95%;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 950px) {
   .footerList ul {
-    margin-right: 120px;
+    font-size: 20px;
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 950px) {
   .footerList ul {
-    margin-right: 30px;
-    font-size: 18px;
+    flex-direction: column;
   }
 }
 
-.footerList li {
-  margin-bottom: 10px;
+@media screen and (max-width: 950px) {
+  .footerList li {
+    padding-bottom: 5px;
+  }
 }
 
 .footerList a {
@@ -312,10 +452,30 @@ footer {
 .footerIcons {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  width: 50%;
+  justify-content: space-between;
+  width: 25%;
   margin-right: auto;
   margin-left: auto;
+  padding-bottom: 15px;
+  padding-left: 0;
+}
+
+@media screen and (max-width: 1000px) {
+  .footerIcons {
+    width: 35%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footerIcons {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footerIcons {
+    width: 65%;
+  }
 }
 
 .footerIcons a {

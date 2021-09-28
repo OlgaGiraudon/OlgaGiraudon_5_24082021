@@ -12,7 +12,8 @@ function getProducts(adresseAPI, gridOfProducts){
         let imgHTML ='';
         for (let i in data){
             imgHTML = '<div class="divProduit">' +
-            '<img src="' + data[i].imageUrl + '" width ="100%" height = "265px">'+
+            '<a class="transparent" href ="produit.html?id='+ data[i]._id +'">'+
+            '<img class = "imageProduits" src="' + data[i].imageUrl + '" width ="100%" height = "265px"></a>'+
                 '<div class="nameProduit"><a href ="produit.html?id='+ data[i]._id +'">'+
                                 '<h3>'+ data[i].name +'</h3></a></div>'+
                 '</div>';
