@@ -8,6 +8,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Aguafina+Script&family=Give+You+Glory&family=Sarpanch:wght@500&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet"> 
         <link rel="stylesheet" href="css/style.css">
         <script src="https://kit.fontawesome.com/adf2835bfe.js" crossorigin="anonymous"></script>
         <script src="js/product.js" defer></script>
@@ -30,20 +31,23 @@
     <img src="../front-end/font/velo.png" alt="Photo_noir_et_blanc_velo">
     <img src="../front-end/font/vintage_camera.jpg" alt="Photo_noir_et_blanc_vintage_cameras">
 </div>
+<!--Main content-->
 <section id="descriptionProduit">
-    <h2 id="product_name"></h2>
+    
     <div id="productMain">
+       
         <div id="photoOfProduct">
-            <div id="prodImage">
+            <h2 id="product_name"></h2>
+            <div id="prodImageDiv">
             </div>
-            <p id="product_description">Here will be the product description(may be)</p>
+            <p id="product_description"></p>
         </div>
-        <div id="productCaract">
-            <p>Sélectionnez la taille de l'objectif  </p>
+        <div id="productSelectDiv">
+            <p class="productOptionText">Sélectionnez la taille de l'objectif  </p>
             <select name="lentillesList" id="lent">
                 
             </select>
-            <p>Sélectionnez la quantité  </p>
+            <p class="productOptionText">Sélectionnez la quantité  </p>
             <select name="Quantity" id="quantityOfProduct">
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -51,13 +55,14 @@
                 <option value="4">4</option>
                 <option value="5">5</option>
             </select>
-            <p>Prix /unité</p>
-            <h3 id="product_price"></h3>
-            <p>Total</p>
-            <input type="text" id="priceTotal" value="">
-            <input type="submit" value="Acheter">
+            <p class="productOptionText">Prix/unité</p>
+            <h3 id="product_price"></h3>   
+            <p id="priceTotal"></p>
+            <input type="submit" value="Ajouter au panier" id="buttonBuy">
         </div>
-   
+    
+        
+    
     </div>
 </section>
 <footer>

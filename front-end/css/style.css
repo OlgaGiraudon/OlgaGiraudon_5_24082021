@@ -269,7 +269,7 @@ img {
 aside {
   width: 25%;
   height: 700px;
-  border: 5px solid #311010;
+  border: 3px solid #2c2b2b;
   margin-top: 15px;
   border-radius: 15px;
   background-image: url("../front-end/font/pellicule.jpg");
@@ -496,10 +496,6 @@ a {
   text-decoration: none;
 }
 
-#descriptionProduit h2 {
-  margin-left: 5%;
-}
-
 #productMain {
   width: 100%;
   display: flex;
@@ -512,16 +508,74 @@ a {
   }
 }
 
-#prodImage {
-  width: 500px;
-  margin-left: 5%;
+#photoOfProduct {
+  width: 45%;
 }
 
-#photoOfProduct p {
-  margin-left: 5%;
-  margin-right: 2%;
+#product_name {
+  width: 96%;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Josefin Sans', sans-serif;
+  text-align: center;
+  font-size: 35px;
 }
 
-#productCaract {
+#prodImageDiv {
+  width: 96%;
+  margin-left: 2%;
+}
+
+#ProdImage {
+  object-fit: cover;
+  border-radius: 15px;
+  border: 3px solid #2c2b2b;
+}
+
+#product_description {
+  width: 94%;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 70px;
+  background-color: #dddcd5;
+  border: 3px solid #2c2b2b;
+  border-radius: 15px;
+  text-align: justify;
+  padding: 1%;
+  font-size: 18px;
+}
+
+#productSelectDiv {
   margin-left: 5%;
+  height: auto;
+  margin-top: 10%;
+}
+
+.productOptionText {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#product_price {
+  font-size: 22px;
+  color: #501616;
+}
+
+#priceTotal {
+  margin-top: 25%;
+  font-size: 22px;
+}
+
+#buttonBuy {
+  width: 200px;
+  height: 40px;
+  font-size: 19px;
+  background-color: #2c2b2b;
+  color: honeydew;
+  border-radius: 10px;
+}
+
+#lent, #quantityOfProduct {
+  width: 150px;
+  height: 30px;
 }
