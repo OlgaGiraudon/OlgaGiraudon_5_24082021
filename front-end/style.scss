@@ -388,6 +388,15 @@ a {
 }
 #photoOfProduct{
     width: 45%;
+    @media screen and(max-width: 1200px){
+        width: 65%;
+    }
+    @media  screen and (max-width:715px) {
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        
+    }
 }
 #product_name {
     width: 96%;
@@ -402,7 +411,12 @@ a {
 {
     width: 96%;
     margin-left: 2%;
-    
+    @media  screen and (max-width:715px) {
+       
+        margin-left: auto;
+        margin-right: auto;
+        
+    }
 }    
 #ProdImage{
     object-fit: cover;
@@ -421,11 +435,24 @@ a {
     text-align: justify;
     padding: 1%;
     font-size: 18px;
+    @media screen and(max-width: 768px){
+        margin-bottom: 20px;
+        min-height: 94px;
+    }
+    @media  screen and (max-width:715px) {
+       
+        margin-left: auto;
+        margin-right: auto;
+        
+    }
 }
 #productSelectDiv{
     margin-left: 5%;
     height: auto;
     margin-top: 10%;
+    @media  screen and (max-width:715px) {
+        margin-top: 0%;
+    }
     
 }
 .productOptionText{
@@ -440,6 +467,9 @@ a {
 #priceTotal{
     margin-top: 25%;
     font-size: 22px;
+    @media  screen and (max-width:715px) {
+        margin-top: 0%;
+    }
 }
 #buttonBuy{
     width: 200px;
@@ -448,9 +478,17 @@ a {
     background-color: rgb(44, 43, 43);
     color: honeydew;
     border-radius: 10px;
+    @media screen and(max-width: 1200px){
+        margin-bottom: 5%;
+    }
+    @media screen and(max-width: 1200px){
+        margin-bottom: 20px;
+    }
 }
 #lent, #quantityOfProduct{
     width: 150px;
     height: 30px;
+    background-color: rgb(221, 220, 213);
+    border-radius: 10px;
 }
 
