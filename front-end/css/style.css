@@ -683,6 +683,7 @@ th {
 #divUsers {
   width: 80%;
   margin: auto;
+  margin-bottom: 20px;
   margin-top: 15px;
 }
 
@@ -719,4 +720,11 @@ th {
   background-color: #363333;
   color: honeydew;
   border-radius: 10px;
+}
+
+#messageVide {
+  font-size: 34px;
+  text-align: center;
+  height: 500px;
+  margin-top: 25px;
 }

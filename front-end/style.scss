@@ -528,7 +528,7 @@ th, td {
  #divUsers{
     width: 80%;
     margin: auto;
-    
+    margin-bottom: 20px;
     margin-top: 15px;
  }
  .donnUsersArt
@@ -562,4 +562,11 @@ th, td {
      background-color: rgb(54, 51, 51);
      color: honeydew;
      border-radius: 10px;
+ }
+
+ #messageVide{
+     font-size: 34px;
+     text-align: center;
+     height: 500px;
+     margin-top: 25px;
  }

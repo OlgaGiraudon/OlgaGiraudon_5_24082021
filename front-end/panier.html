@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Aguafina+Script&family=Give+You+Glory&family=Sarpanch:wght@500&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/index.js" defer></script>
+    <script src="js/panier.js" defer></script>
     <script src="https://kit.fontawesome.com/adf2835bfe.js" crossorigin="anonymous"></script>
     
 </head>
@@ -20,7 +20,7 @@
   <header>
       <h1 class="logoOricam"><a href="index.html">ORICAM</a></h1>
       <h2 class="sloganOricam">Le but de l'art est d'arrêter le temps...</h2>
-      <i class="fas fa-cart-arrow-down navIcon"></i>
+      <a href="panier.html"><i class="fas fa-cart-arrow-down navIcon"></i></a>
      
   </header>
   <!--Photos-->
@@ -35,6 +35,8 @@
       <img src="../front-end/font/vintage_camera.jpg" alt="Photo_noir_et_blanc_vintage_cameras">
   </div>
   <!--Tableau produits-->
+  <h2 id="messageVide"></h2>
+  <div id="mainDivPanier">
   <h2 id="artTable">Votre commande: </h2>
   <table id="table" >
       <thead>
@@ -57,7 +59,7 @@
       
   </table>
   <!--Donées user-->
-  <h2 id="artUser">Vos données </h2>
+  <h2 id="artUser">Vos données: </h2>
     <div id="divUsers">
         <div class="donnUsersArt">
             <span>Nom*</span> 
@@ -101,6 +103,7 @@
             <input type="submit" value="Order" class="buttonUser">
         </div>
     </div>
+</div>
   <!--Footer-->
 <footer>
     <div class="footerList">
