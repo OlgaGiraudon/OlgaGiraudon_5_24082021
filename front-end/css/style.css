@@ -640,3 +640,83 @@ a {
   background-color: #dddcd5;
   border-radius: 10px;
 }
+
+/*Panier */
+#artTable, #artUser {
+  width: 80%;
+  margin: auto;
+  margin-top: 25px;
+  font-size: 25px;
+  text-decoration: underline;
+}
+
+#table {
+  border: 3px solid black;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 80%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 2px solid black;
+  text-align: center;
+  padding: 5px;
+  font-size: 18px;
+  height: 40px;
+}
+
+td {
+  height: 40px;
+}
+
+th {
+  font-size: 20px;
+  height: 35px;
+}
+
+#tablefooter {
+  background-color: #555353;
+}
+
+#divUsers {
+  width: 80%;
+  margin: auto;
+  margin-top: 15px;
+}
+
+.donnUsersArt {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.donnUsersArt span {
+  width: 45%;
+  font-size: 21px;
+}
+
+.donnUsersArt input {
+  height: 40px;
+  width: 45%;
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+.spanLong, .inputLong {
+  width: 95% !important;
+}
+
+.textArr {
+  height: 70px;
+}
+
+.buttonUser {
+  width: 20% !important;
+  margin-top: 25px;
+  background-color: #363333;
+  color: honeydew;
+  border-radius: 10px;
+}

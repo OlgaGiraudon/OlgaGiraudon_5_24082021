@@ -16,6 +16,7 @@ function showProduct(adresseAPI, productWindow, productDescription, productSize,
     response.json()
     )
     .then((data) => {
+       
             let product = '';
             product =  '<img id="ProdImage" src=" ' + data.imageUrl + '" width ="100%"></div>';
             productWindow.innerHTML = product;

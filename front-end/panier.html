@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cameras vintage||Oricam</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aguafina+Script&family=Give+You+Glory&family=Sarpanch:wght@500&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/index.js" defer></script>
+    <script src="https://kit.fontawesome.com/adf2835bfe.js" crossorigin="anonymous"></script>
+    
+</head>
+
+<body>
+    <!--Header-->
+  <header>
+      <h1 class="logoOricam"><a href="index.html">ORICAM</a></h1>
+      <h2 class="sloganOricam">Le but de l'art est d'arrêter le temps...</h2>
+      <i class="fas fa-cart-arrow-down navIcon"></i>
+     
+  </header>
+  <!--Photos-->
+  <div id="fontPhotos">
+      <img src="../front-end/font/velo.png" alt="Photo_noir_et_blanc_velo">
+      <img src="../front-end/font/cameras.jpg" alt="Photo_noir_et_blanc_cameras">
+      <img src="../front-end/font/femmes.jpg" alt="Photo_noir_et_blanc_femmes_elegantes" >
+      <img src="../front-end/font/vintage_camera.jpg" alt="Photo_noir_et_blanc_vintage_cameras">
+      <img src="../front-end/font/Place_de_la_Concorde.jpg" alt="Photo_noir_et_blanc_Place_de_la_Concorde">
+      <img src="../front-end/font/family.jpg" alt="Photo_noir_et_blanc_femme_avec_enfants">
+      <img src="../front-end/font/velo.png" alt="Photo_noir_et_blanc_velo">
+      <img src="../front-end/font/vintage_camera.jpg" alt="Photo_noir_et_blanc_vintage_cameras">
+  </div>
+  <!--Tableau produits-->
+  <h2 id="artTable">Votre commande: </h2>
+  <table id="table" >
+      <thead>
+          <th>Nom de l'article</th>
+          <th>Taille de l'objectif </th>
+          <th>Quantité</th>
+          <th>Prix/unité</th>
+          <th>Total à payer</th>
+          <th>Supprimer l'article</th>
+      </thead>
+      <tr>
+          <td>Camera XXX</td>
+          <td>XXX mm</td>
+          <td>X pc
+             <i class="fas fa-plus-circle"></i></td>
+          <td>XXX euros</td>
+          <td>XXX euros</td>
+          <td><i class="fas fa-trash"></i></td>
+      </tr>
+      
+  </table>
+  <!--Donées user-->
+  <h2 id="artUser">Vos données </h2>
+    <div id="divUsers">
+        <div class="donnUsersArt">
+            <span>Nom*</span> 
+            <span>Prénom*</span>
+        </div>
+        <div class="donnUsersArt">
+            <input type="text" name="nom" placeholder=" ex. Dupont">
+            <input type="text" name="prenom" placeholder="ex. Guillaume">
+        </div>
+        <div class="donnUsersArt">
+            <span class="spanLong">Adresse*</span>
+        </div>
+        <div class="donnUsersArt">
+            <input type="text" placeholder="ex. 11 Rue d'Orléans app.135" class="inputLong" name="adresse">
+        </div>
+        <div class="donnUsersArt">
+            <span>Ville*</span> 
+            <span>Code postal*</span>
+        </div>
+        <div class="donnUsersArt">
+            <input type="text" placeholder=" ex. Paris" name="ville">
+            <input type="text" placeholder="ex. 75004" name="code_postal">
+        </div>
+        <div class="donnUsersArt">
+            <span>Numéro de téléphone</span> 
+            <span>Email*</span>
+        </div>
+        <div class="donnUsersArt">
+            <input type="text" placeholder=" ex. 0712345678" name="ville">
+            <input type="text" placeholder="ex. guillaume_dupont@gmail.com" name="email">
+        </div>
+        <div class="donnUsersArt">
+            <span class="spanLong">Information additionnelle</span>
+        </div>
+        <div class="donnUsersArt">
+            <textarea class="spanLong textArr"></textarea>
+        </div>
+        <div class="donnUsersArt ">
+            <input type="submit" value="Effacer" class="buttonUser">
+            <input type="submit" value="Continuer mes achats" class="buttonUser">
+            <input type="submit" value="Order" class="buttonUser">
+        </div>
+    </div>
+  <!--Footer-->
+<footer>
+    <div class="footerList">
+        <ul>
+            <li><a href="#infoOricam">A propos de nous</a> </li>
+            <li><a href="#">Mentions légales</a> </li>
+            <li><a href="#">Conditions de livraison</a> </li>
+            <li><a href="#">Retourner un produit</a> </li>
+        </ul>
+    </div>
+    <div class="footerIcons">
+        <a href="#"><i class="fab fa-facebook-f footerIcon"></i></a>
+        <a href="#"><i class="fab fa-instagram footerIcon"></i></a>
+        <a href="#"><i class="fab fa-twitter footerIcon"></i></a>
+    </div>
+</footer>
+</body>
+</html>
