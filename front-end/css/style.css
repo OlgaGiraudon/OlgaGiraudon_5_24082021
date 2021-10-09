@@ -728,3 +728,12 @@ th {
   height: 500px;
   margin-top: 25px;
 }
+
+.small {
+  width: 0% !important;
+  height: 0% !important;
+}
+
+#prodId {
+  display: none !important;
+}
