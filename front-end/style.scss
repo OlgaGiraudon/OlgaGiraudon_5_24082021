@@ -464,7 +464,7 @@ a {
     color: rgb(80, 22, 22);
 }
 
-#priceTotal{
+.priceTotal{
     margin-top: 25%;
     font-size: 22px;
     @media  screen and (max-width:715px) {
@@ -576,5 +576,11 @@ th, td {
  }
  #prodId{
     display: none !important;
+ }
+ #total{
+     font-size: 26px;
+     text-align: right;
+     margin-right: 25%;
+     font-weight: bold;
  }
 

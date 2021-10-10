@@ -602,13 +602,13 @@ a {
   color: #501616;
 }
 
-#priceTotal {
+.priceTotal {
   margin-top: 25%;
   font-size: 22px;
 }
 
 @media screen and (max-width: 715px) {
-  #priceTotal {
+  .priceTotal {
     margin-top: 0%;
   }
 }
@@ -736,4 +736,11 @@ th {
 
 #prodId {
   display: none !important;
+}
+
+#total {
+  font-size: 26px;
+  text-align: right;
+  margin-right: 25%;
+  font-weight: bold;
 }
