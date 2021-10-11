@@ -8,7 +8,9 @@ let productId = params.get('id');
 let url = 'http://localhost:3000/api/cameras/' + productId;
 let quantityOfProduct = document.querySelector('#quantityOfProduct');
 let priceTotal = document.querySelector('#priceTotal');
-let button = document.querySelector('#buttonBuy');
+let buttonBuy = document.querySelector('#buttonBuy');
+let buttonPagedAccueil = document.querySelector('#buttonPagedAccueil');
+let buttonVoirPanier = document.querySelector('#buttonVoirPanier');
 
 function showProduct(adresseAPI, productWindow, productDescription, productSize, productPrise,) {
     fetch (adresseAPI)
@@ -94,4 +96,11 @@ buttonBuy.addEventListener('click', function () {
     }
     alert('Le produit a été ajouté au panier');
     
+});
+/*Retour à la page d'accueil ou Panier */
+buttonPagedAccueil.addEventListener('click', function () {
+    document.location.href = "index.html";
+});
+buttonVoirPanier.addEventListener('click', function () {
+    document.location.href = "panier.html";
 });
