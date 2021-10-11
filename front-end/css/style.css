@@ -608,13 +608,14 @@ a:visited {
   color: #501616;
 }
 
-.priceTotal {
-  margin-top: 25%;
+#priceTotal {
+  margin-top: 10%;
   font-size: 22px;
+  font-weight: bold;
 }
 
 @media screen and (max-width: 715px) {
-  .priceTotal {
+  #priceTotal {
     margin-top: 0%;
   }
 }
@@ -627,6 +628,13 @@ a:visited {
 @media screen and (max-width: 1190px) {
   #divButtonsProduits {
     flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #divButtonsProduits {
+    width: 99%;
+    margin-left: 0;
   }
 }
 
@@ -645,6 +653,14 @@ a:visited {
     width: 190px;
     font-size: 17px;
     height: 50px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .buttonPageProduit {
+    margin-bottom: 10px;
+    width: 95%;
+    margin-left: 0;
   }
 }
 
@@ -736,6 +752,11 @@ th {
   border-radius: 10px;
 }
 
+.buttonPagePanier {
+  height: 50px;
+  font-size: 20px;
+}
+
 #messageVide {
   font-size: 34px;
   text-align: center;
@@ -757,4 +778,14 @@ th {
   text-align: right;
   margin-right: 25%;
   font-weight: bold;
+}
+
+.buttonAlert {
+  background-color: #851515;
+}
+
+/*Confirmation*/
+#message {
+  font-size: 24px;
+  margin-left: 1%;
 }

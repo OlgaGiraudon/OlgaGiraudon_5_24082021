@@ -57,12 +57,12 @@
   <h2 id="artUser">Vos données: </h2>
     <div id="divUsers">
         <div class="donnUsersArt">
-            <span>Nom*</span> 
+            <span >Nom*</span> 
             <span>Prénom*</span>
         </div>
         <div class="donnUsersArt">
-            <input type="text" name="nom" placeholder=" ex. Dupont">
-            <input type="text" name="prenom" placeholder="ex. Guillaume">
+            <input type="text" name="nom" placeholder=" ex. Dupont" id="userSurname">
+            <input type="text" name="prenom" placeholder="ex. Guillaume" id="userName">
         </div>
         <div class="donnUsersArt">
             <span class="spanLong">Adresse*</span>
@@ -93,9 +93,9 @@
             <textarea class="spanLong textArr"></textarea>
         </div>
         <div class="donnUsersArt ">
-            <input type="submit" value="Effacer" class="buttonUser">
-            <input type="submit" value="Continuer mes achats" class="buttonUser">
-            <input type="submit" value="Order" class="buttonUser">
+            <input type="submit" value="Vider le panier" class="buttonUser buttonAlert" id="buttonViderpanier">
+            <input type="submit" value="Continuer mes achats" class="buttonUser" id="buttonPageDaccueil">
+            <input type="submit" value="Acheter" class="buttonUser" id= "buttonAcheter">
         </div>
     </div>
 </div>

@@ -11,10 +11,22 @@ let priceTotal = document.querySelector('#priceTotal');
 let tableProducts = document.querySelector('#table');
 let total = document.querySelector('#total');
 let calculPrixTotal = 0;
+let buttonViderpanier = document.querySelector('#buttonViderpanier');
+let buttonPageDaccueil = document.querySelector('#buttonPageDaccueil');
+let buttonAcheter = document.querySelector("#buttonAcheter");
+let userSurname = document.querySelector('#userSurname');
+let userName = document.querySelector('#userName');
+
+
 if(cartProducts === null || JSON.parse(cartProducts).length == 0){
     
     mainDivPanier.innerHTML = '';
-    messageVide.innerHTML = 'Votre panier est vide.';
+    messageVide.innerHTML = 'Votre panier est vide. <br> <button class = "buttonUser buttonPagePanier">Returner à la page d\'accueil</button>'; 
+    messageVide.addEventListener('click', function(event){
+        if(event.target.localName == 'button'){
+            document.location.href = "index.html";
+        }
+    });
 } else{
     
     messageVide.classList.add('small');
@@ -75,6 +87,34 @@ if(cartProducts === null || JSON.parse(cartProducts).length == 0){
         }
         
     });*/
-
-
 }
+buttonViderpanier.addEventListener('click', function () {
+    localStorage.clear();
+    location.reload();
+});
+buttonPageDaccueil.addEventListener('click', function () {
+    document.location.href = "index.html";
+});
+buttonAcheter.addEventListener('click', function(){
+   let regExprUserDataSurname =new RegExp(userSurname.value);
+   let regExprUserDataName = new RegExp(userName.value)
+        if(userSurname.value === ""){
+            alert('Veuillez saisir votre nom');
+        }
+            else if(userName.value === ""){
+                alert('Veuillez saisir votre nom et prénom ');
+            } 
+            else if(/\d/.test(regExprUserDataSurname)){
+            alert('Vérifier lorthographe de votre nom de famille');
+            }
+            else if(/\d/.test(regExprUserDataName)){
+                alert('Vérifier lorthographe de votre prénom');
+            }
+        else {
+                localStorage.setItem('surname', JSON.stringify(userSurname.value));
+                localStorage.setItem('name', JSON.stringify(userName.value));
+                document.location.href = "confirmation.html";
+            }
+   
+});
+
