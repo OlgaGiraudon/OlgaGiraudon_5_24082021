@@ -718,6 +718,32 @@ a:visited {
   border-collapse: collapse;
 }
 
+@media screen and (max-width: 1400px) {
+  #table {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #table {
+    width: 98%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #table {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #table {
+    width: 90%;
+  }
+}
+
 th, td {
   border: 2px solid black;
   text-align: center;
@@ -726,13 +752,56 @@ th, td {
   height: 40px;
 }
 
+@media screen and (max-width: 800px) {
+  th, td {
+    font-size: 17px !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  th, td {
+    font-size: 22px !important;
+  }
+}
+
 td {
   height: 40px;
+}
+
+@media screen and (max-width: 600px) {
+  td {
+    display: flex;
+    flex-direction: column;
+    border: 0.5px solid grey;
+  }
 }
 
 th {
   font-size: 20px;
   height: 35px;
+}
+
+@media screen and (max-width: 600px) {
+  th {
+    display: none;
+  }
+}
+
+.videProduct {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .videProduct {
+    display: grid;
+    background-color: #3d3c3c;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .priceUnit {
+    display: none;
+  }
 }
 
 #tablefooter {
@@ -746,6 +815,27 @@ th {
   margin-top: 15px;
 }
 
+@media screen and (max-width: 1400px) {
+  #divUsers {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #divUsers {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #divUsers {
+    width: 90%;
+  }
+}
+
 .donnUsersArt {
   width: 80%;
   display: flex;
@@ -753,9 +843,29 @@ th {
   justify-content: space-around;
 }
 
+@media screen and (max-width: 1400px) {
+  .donnUsersArt {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .donnUsersArt {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
 .donnUsersArt span {
   width: 45%;
   font-size: 21px;
+}
+
+@media screen and (max-width: 600px) {
+  .donnUsersArt span {
+    width: 100% !important;
+  }
 }
 
 .donnUsersArt input {
@@ -765,12 +875,50 @@ th {
   margin-bottom: 10px;
 }
 
+@media screen and (max-width: 600px) {
+  .donnUsersArt input {
+    width: 100%;
+    height: 30px;
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
+}
+
 .spanLong, .inputLong {
   width: 95% !important;
 }
 
+@media screen and (max-width: 600px) {
+  .spanLong, .inputLong {
+    width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .grandspan {
+    display: none;
+  }
+}
+
+.petitspan {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .petitspan {
+    display: grid;
+    font-size: 19px !important;
+  }
+}
+
 .textArr {
   height: 70px;
+}
+
+@media screen and (max-width: 600px) {
+  .textArrSpan {
+    font-size: 19px !important;
+  }
 }
 
 .buttonUser {
@@ -779,6 +927,20 @@ th {
   background-color: #363333;
   color: honeydew;
   border-radius: 10px;
+}
+
+@media screen and (max-width: 950px) {
+  .buttonUser {
+    width: 30% !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .buttonUser {
+    width: 100% !important;
+    height: 50px !important;
+    font-size: 20px !important;
+  }
 }
 
 .buttonPagePanier {
@@ -807,6 +969,12 @@ th {
   text-align: right;
   margin-right: 25%;
   font-weight: bold;
+}
+
+@media screen and (max-width: 800px) {
+  #total {
+    font-size: 22px;
+  }
 }
 
 .buttonAlert {
@@ -845,5 +1013,11 @@ th {
 @media screen and (max-width: 478px) {
   #messageDiv {
     height: 350px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  #messageDiv {
+    height: 300px;
   }
 }

@@ -484,6 +484,7 @@ a:visited{
     font-weight: bold;
     @media  screen and (max-width:715px) {
         margin-top: 0%;
+        
     }
 }
 #divButtonsProduits{
@@ -556,6 +557,20 @@ a:visited{
     margin-bottom: 30px;
     width: 80%;
     border-collapse: collapse;
+    @media  screen and(max-width:1400px){
+        width: 90%;
+    }
+    @media  screen and(max-width:800px){
+        width: 98%;
+    }
+    @media  screen and(max-width:600px) {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+    }
+    @media  screen and(max-width:400px) {
+        width: 90%;
+    }
 }
 th, td {
     border: 2px solid black;
@@ -563,22 +578,66 @@ th, td {
     padding: 5px;
     font-size: 18px;
     height: 40px;
+    @media  screen and(max-width:800px){
+        font-size: 17px!important;
+    }
+    @media  screen and(max-width:600px){
+        font-size: 22px!important;
+    }
  }
  td{
     height: 40px;
+    @media  screen and(max-width:600px) {
+        display: flex;
+        flex-direction: column;
+         border: 0.5px solid grey;
+    }
+    
  }
  th{
      font-size: 20px;
      height: 35px;
+     @media  screen and(max-width:600px) {
+        
+        display: none;
+        
+    }
+ }
+ 
+ .videProduct{
+     display: none;
+    @media  screen and(max-width:600px) {
+        display: grid;
+        background-color: rgb(61, 60, 60);
+    }
+ }
+ .priceUnit{
+    @media  screen and(max-width:600px) {
+       display: none;
+    }
  }
  #tablefooter{
      background-color: rgb(85, 83, 83);
  }
+
+ 
  #divUsers{
     width: 80%;
     margin: auto;
     margin-bottom: 20px;
     margin-top: 15px;
+    @media  screen and(max-width:1400px) {
+        width: 90%;
+    }
+    @media  screen and(max-width:600px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 80%;
+    }
+    @media  screen and(max-width:400px) {
+        width: 90%;
+    }
  }
  .donnUsersArt
  {
@@ -586,24 +645,65 @@ th, td {
      display: flex;
      flex-direction: row;
      justify-content: space-around;
+     @media  screen and(max-width:1400px){
+        width: 100%;
+     }
+     @media  screen and(max-width:600px) {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        
+    }
     
  }
  .donnUsersArt span{
      width: 45%;
      font-size: 21px;
-     
+     @media  screen and(max-width:600px) {
+        width: 100%!important;
+     }
+
  }
  .donnUsersArt input{
      height: 40px;
      width: 45%;
      font-size: 17px;
      margin-bottom: 10px;
+     @media  screen and(max-width:600px) {
+       width: 100%;
+       height: 30px;
+       font-size: 15px;
+       margin-bottom: 15px;
+        
+    }
  }
  .spanLong, .inputLong{
     width: 95%!important;
+    @media  screen and(max-width:600px) {
+        width: 100%!important;
+     }
+ }
+ .grandspan{
+    @media  screen and(max-width:600px) {
+        display: none;
+         
+     }
+ }
+ .petitspan{
+     display: none;
+     @media  screen and(max-width:600px) {
+        display: grid;
+        font-size: 19px!important;
+       
+     }
  }
  .textArr{
      height: 70px;
+ }
+ .textArrSpan{
+    @media  screen and(max-width:600px) {
+    font-size: 19px!important;
+    }
  }
  .buttonUser{
      width: 20%!important;
@@ -611,6 +711,16 @@ th, td {
      background-color: rgb(54, 51, 51);
      color: honeydew;
      border-radius: 10px;
+     @media  screen and(max-width:950px){
+        width: 30%!important;
+     }
+     @media  screen and(max-width:600px) {
+        width: 100%!important;
+        height: 50px!important;
+        font-size: 20px!important;
+         
+     }
+    
  }
  .buttonPagePanier{
      height: 50px;
@@ -635,6 +745,9 @@ th, td {
      text-align: right;
      margin-right: 25%;
      font-weight: bold;
+     @media  screen and(max-width:800px) {
+        font-size: 22px;
+        }
  }
  .buttonAlert{
     background-color: rgb(133, 21, 21);
@@ -659,6 +772,9 @@ margin-left: 1%;
     }
     @media  screen and(max-width:478px) {
         height: 350px;
+    }
+    @media  screen and(max-width:360px) {
+        height: 300px;
     }
     
 }

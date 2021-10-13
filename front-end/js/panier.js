@@ -77,11 +77,17 @@ if(cartProducts === null || JSON.parse(cartProducts).length == 0){
        tableProducts.appendChild(tr);
        td5.addEventListener('click', function () {
            
+        
        });
+        let td6 = document.createElement('td');
+        td6.classList.add('videProduct');
+        tr.appendChild(td6);
     };
 
     total.innerHTML = 'Total à payer: ' + calculPrixTotal + ' €';  
     
+     
+    //});
     /*suppression.addEventListener('click', function() {
         let idList = product.map(elem => elem.idProduit);
         if(idList.includes(product[0].idProduit)){
