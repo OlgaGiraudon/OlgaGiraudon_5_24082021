@@ -1,9 +1,23 @@
 let message = document.querySelector('#message');
 let date = new Date();
-message.innerHTML = 'Madame(Monsieur) ' + JSON.parse(localStorage.getItem('surname')) + ' ' + 
-JSON.parse(localStorage.getItem('name')) +
-'! <br> Nous vous remercions de votre achat. <br> '+
-'Votre numero de comande est: <b>' + (JSON.parse(localStorage.getItem('surname')).split('')[0]).toUpperCase() +
-JSON.parse(localStorage.getItem('name')).split('')[0].toUpperCase()+
-date.getFullYear() + (date.getMonth()+1)+ date.getDate() + '</b>. <br>'+
-'La livraison sera effectuée à l\'adresse suivante: ';
+let objUserData = JSON.parse(localStorage.getItem('userData'));
+message.innerHTML = 'Madame(Monsieur) ' + objUserData.surname + ' ' + objUserData.name +
+'! <br> <br> Nous vous remercions de votre achat. <br> '+
+'Votre numero de comande est: <b>' + (objUserData.surname.split('')[0]).toUpperCase() +
+objUserData.name.split('')[0].toUpperCase()+
+date.getFullYear() + (date.getMonth()+1)+ date.getDate() + Math.ceil(Math.random()*100) + '</b>. <br>'+
+'La livraison sera effectuée à l\'adresse suivante: ' + objUserData.adress + ', ' + objUserData.city + ' ' + objUserData.code + ' .<br> <br>'+
+'L\'équipe Oricam. '
+
+
+
+
+
+
+
+
+
+
+
+
+

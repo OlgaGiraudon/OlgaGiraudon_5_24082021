@@ -818,3 +818,32 @@ th {
   font-size: 24px;
   margin-left: 1%;
 }
+
+@media screen and (max-width: 478px) {
+  #message {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 478px) {
+  #message {
+    font-size: 20px;
+  }
+}
+
+#messageDiv {
+  height: 520px;
+  margin-left: 1%;
+}
+
+@media screen and (max-width: 810px) {
+  #messageDiv {
+    height: 530px;
+  }
+}
+
+@media screen and (max-width: 478px) {
+  #messageDiv {
+    height: 350px;
+  }
+}
