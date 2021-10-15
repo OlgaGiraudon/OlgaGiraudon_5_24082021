@@ -756,25 +756,54 @@ th, td {
 /*Confirmation*/
 #message{
 font-size: 24px;
-margin-left: 1%;
-    @media  screen and(max-width:478px) {
-    font-size: 22px;
-    }
-    @media  screen and(max-width:478px) {
+text-align: justify;
+border: 2px solid rgb(39, 29, 29);
+justify-content: center;
+margin-left: auto;
+margin-right: auto;
+padding: 15px;
+width: 90%;
+border-radius: 20px;
+    @media  screen and(max-width:1070px) {
         font-size: 20px;
-        }
+    }
+    @media  screen and(max-width:550px) {
+        font-size: 18px;
+    }
+    @media  screen and(max-width:414px) {
+        padding: 10px;
+        font-size: 17px;
+    }
 }
 #messageDiv{
     height: 520px;
-    margin-left: 1%;
+    @media  screen and(max-width:1070px) {
+        height: 600px;
+    }
     @media  screen and(max-width:810px) {
         height: 530px;
+    }    
+}
+#borderDiv{
+    display: flex;
+    border: 5px solid rgb(39, 29, 29);
+    margin-left: 25%;
+    width: 50%;
+    height: 70%;
+    margin-top: 2%;
+    box-shadow: 10px 10px 20px rgb(112, 106, 106);
+    border-radius: 20px;
+    background-color: #dddcd5;
+    @media  screen and(max-width:1070px) {
+        width: 70%;
+        margin-right: auto;
+        margin-left: auto;
     }
-    @media  screen and(max-width:478px) {
-        height: 350px;
+    @media  screen and(max-width:650px) {
+        width: 80%;
+        margin-top: 5%;
     }
-    @media  screen and(max-width:360px) {
-        height: 300px;
+    @media  screen and(max-width:550px) {
+        width: 90%;
     }
-    
 }

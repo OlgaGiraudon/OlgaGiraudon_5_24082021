@@ -984,24 +984,43 @@ th {
 /*Confirmation*/
 #message {
   font-size: 24px;
-  margin-left: 1%;
+  text-align: justify;
+  border: 2px solid #271d1d;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px;
+  width: 90%;
+  border-radius: 20px;
 }
 
-@media screen and (max-width: 478px) {
-  #message {
-    font-size: 22px;
-  }
-}
-
-@media screen and (max-width: 478px) {
+@media screen and (max-width: 1070px) {
   #message {
     font-size: 20px;
   }
 }
 
+@media screen and (max-width: 550px) {
+  #message {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  #message {
+    padding: 10px;
+    font-size: 17px;
+  }
+}
+
 #messageDiv {
   height: 520px;
-  margin-left: 1%;
+}
+
+@media screen and (max-width: 1070px) {
+  #messageDiv {
+    height: 600px;
+  }
 }
 
 @media screen and (max-width: 810px) {
@@ -1010,14 +1029,35 @@ th {
   }
 }
 
-@media screen and (max-width: 478px) {
-  #messageDiv {
-    height: 350px;
+#borderDiv {
+  display: flex;
+  border: 5px solid #271d1d;
+  margin-left: 25%;
+  width: 50%;
+  height: 70%;
+  margin-top: 2%;
+  box-shadow: 10px 10px 20px #706a6a;
+  border-radius: 20px;
+  background-color: #dddcd5;
+}
+
+@media screen and (max-width: 1070px) {
+  #borderDiv {
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
   }
 }
 
-@media screen and (max-width: 360px) {
-  #messageDiv {
-    height: 300px;
+@media screen and (max-width: 650px) {
+  #borderDiv {
+    width: 80%;
+    margin-top: 5%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  #borderDiv {
+    width: 90%;
   }
 }

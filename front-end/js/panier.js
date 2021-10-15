@@ -85,7 +85,7 @@ if(cartProducts === null || JSON.parse(cartProducts).length == 0){
     };
 
     total.innerHTML = 'Total à payer: ' + calculPrixTotal + ' €';  
-    
+    localStorage.setItem('priceTotal', JSON.stringify(calculPrixTotal));
      
     //});
     /*suppression.addEventListener('click', function() {
@@ -127,7 +127,7 @@ function verifChampSaisie(champsArray){
     for(let elem of champsArray){
         let regExprUserData = elem.value;
         if(elem.name == 'nom' || elem.name == 'prenom' || elem.name == 'ville'){
-            if(!/^[a-zA-Z-]+$/.test(regExprUserData)){
+            if(!/^[a-zA-Z-áàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ]+$/.test(regExprUserData)){
                 varBoolean = false;
                 alert('Le champ ' + elem.name + ' est invalide. Veuillez verifier la saisie');
                 break;
@@ -149,6 +149,7 @@ function verifChampSaisie(champsArray){
         }
         else if(elem.name == 'code_postal'){
             if(!/^[a-zA-Z0-9]+$/.test(regExprUserData)){
+                
                 alert('Le champ "Code postal" est invalide. Veuillez verifier la saisie');
                 varBoolean = false;
                 break;
@@ -158,7 +159,8 @@ function verifChampSaisie(champsArray){
             }
         }
         else if(elem.name == 'numero'){
-            if(!/^[0-9]+$/.test(regExprUserData)){
+                if (!(regExprUserData == "") && !(/^[0-9\+]+$/.test(regExprUserData))){
+                console.log(regExprUserData);
                 alert('Le champ "Numéro de téléphone" est invalide. Veuillez verifier la saisie');
                 varBoolean = false;
                 break;
