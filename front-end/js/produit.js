@@ -85,8 +85,12 @@ buttonBuy.addEventListener('click', function () {
                         'prixU': String(productPrise.innerHTML.slice(0,-1)),
                         'idProduit': productId};
         if(idList.includes(productId)){
-            let positionId = idList.indexOf(productId);
-            prodArray[positionId] =  produitObjet;
+            let positionId = idList.indexOf(productId); 
+            if(prodArray[positionId].size == produitObjet.size){
+                prodArray[positionId] =  produitObjet;
+            } else {
+                prodArray.push(produitObjet);
+            }
         }
         else {
             prodArray.push(produitObjet);
