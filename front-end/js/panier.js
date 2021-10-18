@@ -5,7 +5,7 @@ let cameraNameTd = document.querySelector('#cameraNameTd');
 let cameraSizeTd = document.querySelector('#cameraSizeTd');
 let quantityTd = document.querySelector('#quantityTd');
 let priceUnit = document.querySelector('#priceUnit');
-let prodId = document.querySelector('#prodId');
+
 let suppression;
 let priceTotal = document.querySelector('#priceTotal');
 let tableProducts = document.querySelector('#table');
@@ -26,7 +26,7 @@ let champsTousArray = [userSurname,userName,userAdress, userCity, userPostalCode
 if(cartProducts === null || JSON.parse(cartProducts).length == 0){
     
     mainDivPanier.innerHTML = '';
-    messageVide.innerHTML = 'Votre panier est vide. <br> <button class = "buttonUser buttonPagePanier">Returner à la page d\'accueil</button>'; 
+    messageVide.innerHTML = 'Votre panier est vide. <br> <button class = "buttonUser buttonPagePanier">Retourner à la page d\'accueil</button>'; 
     messageVide.addEventListener('click', function(event){
         if(event.target.localName == 'button'){
             document.location.href = "index.html";
@@ -37,7 +37,7 @@ if(cartProducts === null || JSON.parse(cartProducts).length == 0){
     messageVide.classList.add('small');
     let cartProductsArray = JSON.parse(cartProducts);
     for(let i =0; i< cartProductsArray.length; i++){
-        let product = cartProductsArray[i];
+       let product = cartProductsArray[i];
        let tr = document.createElement('tr');
        
        let td0 = document.createElement('td');
@@ -72,13 +72,14 @@ if(cartProducts === null || JSON.parse(cartProducts).length == 0){
        
        let td5 = document.createElement('td');
        td5.classList.add('deleteProduct');
-       td5.innerHTML = '<i class="fas fa-trash"><span id="prodId"></span></i>';
+       td5.innerHTML = '<i class="fas fa-trash suppression"><span id="prodId"></span></i>';
+       
        tr.appendChild(td5);
        tableProducts.appendChild(tr);
-       td5.addEventListener('click', function () {
-           
-        
-       });
+       let prodId = document.querySelector('#prodId');
+       prodId.innerHTML = product.idProduit;
+
+       
         let td6 = document.createElement('td');
         td6.classList.add('videProduct');
         tr.appendChild(td6);
@@ -86,18 +87,21 @@ if(cartProducts === null || JSON.parse(cartProducts).length == 0){
 
     total.innerHTML = 'Total à payer: ' + calculPrixTotal + ' €';  
     localStorage.setItem('priceTotal', JSON.stringify(calculPrixTotal));
-     
-    //});
-    /*suppression.addEventListener('click', function() {
-        let idList = product.map(elem => elem.idProduit);
-        if(idList.includes(product[0].idProduit)){
-            let positionId = idList.indexOf(product[0].idProduit);
-            product.splice(positionId,1);
-            localStorage.setItem('cartProducts', JSON.stringify(product));
-            location.reload();
-        }
-        
-    });*/
+    
+    /*Suppression du produit*/
+    let suppressionItem = document.querySelectorAll('.suppression');  
+    suppressionItem.forEach((element,index) => {
+        element.addEventListener('click', function () {
+            deleteItemSelect(index); 
+        })
+       
+    });
+    function deleteItemSelect(index) {
+       cartProductsArray.splice(index, 1);
+       localStorage.setItem('cartProducts', JSON.stringify(cartProductsArray) );
+       location.reload();
+       
+    };
 }
 buttonViderpanier.addEventListener('click', function () {
     localStorage.clear();
