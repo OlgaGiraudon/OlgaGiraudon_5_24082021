@@ -1,13 +1,7 @@
 let messageVide = document.querySelector('#messageVide');
 let mainDivPanier = document.querySelector('#mainDivPanier');
 let cartProducts = localStorage.getItem('cartProducts');
-let cameraNameTd = document.querySelector('#cameraNameTd');
-let cameraSizeTd = document.querySelector('#cameraSizeTd');
-let quantityTd = document.querySelector('#quantityTd');
 let priceUnit = document.querySelector('#priceUnit');
-
-let suppression;
-let priceTotal = document.querySelector('#priceTotal');
 let tableProducts = document.querySelector('#table');
 let total = document.querySelector('#total');
 let calculPrixTotal = 0;
@@ -23,6 +17,12 @@ let userPhoneNumber = document.querySelector('#userPhoneNumber');
 let userMail = document.querySelector('#userMail');
 let champsObligatoiresArray = [userSurname,userName,userAdress, userCity, userPostalCode, userMail];
 let champsTousArray = [userSurname,userName,userAdress, userCity, userPostalCode, userPhoneNumber, userMail];
+function createTableRows (className, valeurRow, tr ){
+    let td0 = document.createElement('td');
+    td0.classList.add(className);
+    tr.appendChild(td0);
+    td0.innerHTML = valeurRow;
+}
 if(cartProducts === null || JSON.parse(cartProducts).length == 0){
     
     mainDivPanier.innerHTML = '';
@@ -32,62 +32,28 @@ if(cartProducts === null || JSON.parse(cartProducts).length == 0){
             document.location.href = "index.html";
         }
     });
-} else{
+} 
+else{
     
     messageVide.classList.add('small');
+   
     let cartProductsArray = JSON.parse(cartProducts);
     for(let i =0; i< cartProductsArray.length; i++){
+        
        let product = cartProductsArray[i];
        let tr = document.createElement('tr');
-       
-       let td0 = document.createElement('td');
-       td0.classList.add('cameraNameTd');
-       tr.appendChild(td0);
-       td0.innerHTML = product.name;
-       
-       let td1 = document.createElement('td');
-       td1.classList.add('cameraSizeTd');
-       tr.appendChild(td1);
-       td1.innerHTML = product.size;
-      
-       let td2 = document.createElement('td');
-       td2.classList.add('quantityTd');
-       tr.appendChild(td2);
-       td2.innerHTML = product.number;
-       let quantNumber = Number(td2.innerHTML);
-       
-       
-       let td3 = document.createElement('td');
-       td3.classList.add('priceUnit');
-       tr.appendChild(td3);
-       td3.innerHTML = product.prixU + ' €';
-       let priceNumber = Number(td3.innerHTML.slice(0,-1));   
-
-        let td4 = document.createElement('td');
-        td4.classList.add('priceTotal');
-        let prixTotalNumber = quantNumber*priceNumber;
-        calculPrixTotal +=prixTotalNumber;
-        td4.innerHTML = prixTotalNumber + ' €';;
-        tr.appendChild(td4);
-       
-       let td5 = document.createElement('td');
-       td5.classList.add('deleteProduct');
-       td5.innerHTML = '<i class="fas fa-trash suppression"><span id="prodId"></span></i>';
-       
-       tr.appendChild(td5);
+       createTableRows ('cameraNameTd', product.name, tr );
+       createTableRows ('cameraSizeTd', product.size, tr );
+       createTableRows ('quantityTd', product.number, tr );
+       createTableRows ('priceUnit', product.prixU + ' €', tr );
+       createTableRows ('priceTotal', product.prixU*product.number, tr );
+       createTableRows ('deleteProduct', '<i class="fas fa-trash suppression"><span id="prodId"></span></i>', tr );
        tableProducts.appendChild(tr);
-       let prodId = document.querySelector('#prodId');
-       prodId.innerHTML = product.idProduit;
+       calculPrixTotal +=product.prixU*product.number;
 
        
-        let td6 = document.createElement('td');
-        td6.classList.add('videProduct');
-        tr.appendChild(td6);
+       
     };
-
-    total.innerHTML = 'Total à payer: ' + calculPrixTotal + ' €';  
-    localStorage.setItem('priceTotal', JSON.stringify(calculPrixTotal));
-    
     /*Suppression du produit*/
     let suppressionItem = document.querySelectorAll('.suppression');  
     suppressionItem.forEach((element,index) => {
@@ -103,6 +69,10 @@ if(cartProducts === null || JSON.parse(cartProducts).length == 0){
        
     };
 }
+    total.innerHTML = 'Total à payer: ' + calculPrixTotal + ' €';  
+    localStorage.setItem('priceTotal', JSON.stringify(calculPrixTotal));
+    
+    
 buttonViderpanier.addEventListener('click', function () {
     localStorage.clear();
     location.reload();
@@ -110,6 +80,7 @@ buttonViderpanier.addEventListener('click', function () {
 buttonPageDaccueil.addEventListener('click', function () {
     document.location.href = "index.html";
 });
+
 /*Function verification si le champ de formulaire est vide*/
 function verifChampVide(champsArray) {
     for(let elem of champsArray){
@@ -164,7 +135,6 @@ function verifChampSaisie(champsArray){
         }
         else if(elem.name == 'numero'){
                 if (!(regExprUserData == "") && !(/^[0-9\+]+$/.test(regExprUserData))){
-                console.log(regExprUserData);
                 alert('Le champ "Numéro de téléphone" est invalide. Veuillez verifier la saisie');
                 varBoolean = false;
                 break;

@@ -67,27 +67,25 @@ quantityOfProduct.addEventListener('change', function(){
 
 buttonBuy.addEventListener('click', function () {
     let localStorageProd = localStorage.getItem('cartProducts');
+    let produitObjet = {'name': productName.innerHTML,
+                        'size': sizeSelected,
+                        'number': String(numberSelected),
+                        'prixU': String(productPrise.innerHTML.slice(0,-1)),
+                        'idProduit': productId};
     if(localStorageProd === null || JSON.parse(localStorageProd).length == 0){
-        produitArray = [{'name': productName.innerHTML,
-                    'size': sizeSelected,
-                    'number': String(numberSelected),
-                    'prixU': String(productPrise.innerHTML.slice(0,-1)) ,
-                    'idProduit': productId}
-                ];
+        produitArray = [produitObjet];
+      
     localStorage.setItem('cartProducts', JSON.stringify(produitArray));
     }
     else{
         let prodArray = JSON.parse(localStorageProd);
         let idList = prodArray.map(elem => elem.idProduit);
-        produitObjet = {'name': productName.innerHTML,
-                        'size': sizeSelected,
-                        'number': String(numberSelected),
-                        'prixU': String(productPrise.innerHTML.slice(0,-1)),
-                        'idProduit': productId};
+        
         if(idList.includes(productId)){
             let positionId = idList.indexOf(productId); 
             if(prodArray[positionId].size == produitObjet.size){
                 prodArray[positionId] =  produitObjet;
+                
             } else {
                 prodArray.push(produitObjet);
             }
