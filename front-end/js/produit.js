@@ -13,7 +13,7 @@ let buttonPagedAccueil = document.querySelector('#buttonPagedAccueil');
 let buttonVoirPanier = document.querySelector('#buttonVoirPanier');
 
 
-function showProduct(adresseAPI, productWindow, productDescription, productSize, productPrise,) {
+function showProduct(adresseAPI, productWindow, productDescription, productSize, productPrise) {
     fetch (adresseAPI)
     .then((response)=>
     response.json()
@@ -75,7 +75,7 @@ quantityOfProduct.addEventListener('change', function(){
     priceTotal.innerHTML = "Total à payer: " + '<b>' +Number(productPrise.innerHTML.slice(0,-1))*quantityOfProduct.value + ' € </b>';
 })
 
-/*Ajout le produit dans le panier/local storage*/
+/*Ajoute le produit dans le panier/local storage*/
 buttonBuy.addEventListener('click', function () {
     let localStorageProd = localStorage.getItem('cartProducts');
     let produitObjet = {'name': productName.innerHTML,

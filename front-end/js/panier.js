@@ -25,7 +25,7 @@ function createTableRows (className, valeurRow, tr ){
     tr.appendChild(td0);
     td0.innerHTML = valeurRow;
 }
-/*Verification: si panier est vide afficher le message et le bouton pour retourner à l'accueil*/
+/*Vérification: si le panier est vide afficher le message et le bouton pour retourner à l'accueil*/
 if(cartProducts === null || JSON.parse(cartProducts).length == 0){
     
     mainDivPanier.innerHTML = '';
@@ -42,7 +42,7 @@ else{
     messageVide.classList.add('small');
    
     let cartProductsArray = JSON.parse(cartProducts);
-    /*Creation des lignes et colonnes du tableau pour chaque element dans cartProductsArrays*/
+    /*Création des lignes et colonnes du tableau pour chaque élément dans cartProductsArrays*/
     for(let i =0; i< cartProductsArray.length; i++){
         
        let product = cartProductsArray[i];
@@ -78,17 +78,17 @@ else{
     total.innerHTML = 'Total à payer: ' + calculPrixTotal + ' €';  
     localStorage.setItem('priceTotal', JSON.stringify(calculPrixTotal));
     
-  /*Bouton pour vider le panier completement*/  
+  /*Bouton pour vider le panier complètement*/  
 buttonViderpanier.addEventListener('click', function () {
     localStorage.clear();
     location.reload();
 });
-/*Bouton pour retourner à l'accuel*/
+/*Bouton pour retourner à l'accueil*/
 buttonPageDaccueil.addEventListener('click', function () {
     document.location.href = "index.html";
 });
 
-/*Fonction verification si le champ de formulaire est vide*/
+/*Fonction de vérification si le champ de formulaire est vide*/
 function verifChampVide(champsArray) {
     for(let elem of champsArray){
         var varBoolean1 = true;
@@ -102,7 +102,7 @@ function verifChampVide(champsArray) {
         verifChampSaisie(champsTousArray);
     };
 };
-/*Fonction verification la saisie du formulaire */
+/*Fonction de verification de la saisie du formulaire */
 function verifChampSaisie(champsArray){
     let objDataUser ={};
     var varBoolean = true;
@@ -144,7 +144,7 @@ function verifChampSaisie(champsArray){
             }
         }
         else if(elem.name == 'numero'){
-            /*le champ "Numéro de téléphone" ne peut contenir que des chiffres ou etre vide */
+            /*le champ "Numéro de téléphone" ne peut contenir que des chiffres ou être vide */
                 if (!(regExprUserData == "") && !(/^[0-9\+]+$/.test(regExprUserData))){
                 alert('Le champ "Numéro de téléphone" est invalide. Veuillez verifier la saisie');
                 varBoolean = false;

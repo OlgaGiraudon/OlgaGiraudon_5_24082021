@@ -1,7 +1,7 @@
-//initialization  of variables and constants//
+//initialisation  des variables//
 let  gridProduit = document.querySelector('#gridProduits');
 let url = 'http://localhost:3000/api/cameras';
-//function avec URL en parametres, resultat - code HTML//
+//fonction avec URL et élément DOM en paramètres, résultat - code HTML//
 function getProducts(adresseAPI, gridOfProducts){
     fetch (adresseAPI)
     .then((response)=>
