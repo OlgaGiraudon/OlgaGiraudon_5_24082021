@@ -12,13 +12,20 @@ let buttonBuy = document.querySelector('#buttonBuy');
 let buttonPagedAccueil = document.querySelector('#buttonPagedAccueil');
 let buttonVoirPanier = document.querySelector('#buttonVoirPanier');
 
+
 function showProduct(adresseAPI, productWindow, productDescription, productSize, productPrise,) {
     fetch (adresseAPI)
     .then((response)=>
     response.json()
     )
     .then((data) => {
+        let counter =0;
+        for(let elem in data){
+            counter++
+        };
+       
 
+        if(counter != 0){ 
             let product = '';
             product =  '<img id="ProdImage" src=" ' + data.imageUrl + '" width ="100%"></div>';
             productWindow.innerHTML = product;
@@ -42,7 +49,11 @@ function showProduct(adresseAPI, productWindow, productDescription, productSize,
             prixProd = data.price;
             productPrise.innerHTML=prixProd/100 + ' €';
             priceTotal.innerHTML ="Total à payer: " +'<b>'+productPrise.innerHTML + ' </b>';
-    }
+            } else {
+                productSelectDiv.style.visibility='hidden';
+                productDescription.innerHTML = 'Produit non disponible';
+            };
+        }
     )};
 
 showProduct(url, productWindow, productDescription, productSize, productPrise);
@@ -64,7 +75,7 @@ quantityOfProduct.addEventListener('change', function(){
     priceTotal.innerHTML = "Total à payer: " + '<b>' +Number(productPrise.innerHTML.slice(0,-1))*quantityOfProduct.value + ' € </b>';
 })
 
-
+/*Ajout le produit dans le panier/local storage*/
 buttonBuy.addEventListener('click', function () {
     let localStorageProd = localStorage.getItem('cartProducts');
     let produitObjet = {'name': productName.innerHTML,

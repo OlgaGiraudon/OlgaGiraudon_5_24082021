@@ -17,12 +17,15 @@ let userPhoneNumber = document.querySelector('#userPhoneNumber');
 let userMail = document.querySelector('#userMail');
 let champsObligatoiresArray = [userSurname,userName,userAdress, userCity, userPostalCode, userMail];
 let champsTousArray = [userSurname,userName,userAdress, userCity, userPostalCode, userPhoneNumber, userMail];
+
+/* Fonction qui crée des colonnes du tableau */
 function createTableRows (className, valeurRow, tr ){
     let td0 = document.createElement('td');
     td0.classList.add(className);
     tr.appendChild(td0);
     td0.innerHTML = valeurRow;
 }
+/*Verification: si panier est vide afficher le message et le bouton pour retourner à l'accueil*/
 if(cartProducts === null || JSON.parse(cartProducts).length == 0){
     
     mainDivPanier.innerHTML = '';
@@ -33,11 +36,13 @@ if(cartProducts === null || JSON.parse(cartProducts).length == 0){
         }
     });
 } 
+
 else{
     
     messageVide.classList.add('small');
    
     let cartProductsArray = JSON.parse(cartProducts);
+    /*Creation des lignes et colonnes du tableau pour chaque element dans cartProductsArrays*/
     for(let i =0; i< cartProductsArray.length; i++){
         
        let product = cartProductsArray[i];
@@ -49,12 +54,12 @@ else{
        createTableRows ('priceTotal', product.prixU*product.number, tr );
        createTableRows ('deleteProduct', '<i class="fas fa-trash suppression"><span id="prodId"></span></i>', tr );
        tableProducts.appendChild(tr);
-       calculPrixTotal +=product.prixU*product.number;
+        calculPrixTotal +=product.prixU*product.number;
 
        
        
     };
-    /*Suppression du produit*/
+    /*Suppression du produit du tableau*/
     let suppressionItem = document.querySelectorAll('.suppression');  
     suppressionItem.forEach((element,index) => {
         element.addEventListener('click', function () {
@@ -69,19 +74,21 @@ else{
        
     };
 }
+    /*Calcul le prix total d'achat*/
     total.innerHTML = 'Total à payer: ' + calculPrixTotal + ' €';  
     localStorage.setItem('priceTotal', JSON.stringify(calculPrixTotal));
     
-    
+  /*Bouton pour vider le panier completement*/  
 buttonViderpanier.addEventListener('click', function () {
     localStorage.clear();
     location.reload();
 });
+/*Bouton pour retourner à l'accuel*/
 buttonPageDaccueil.addEventListener('click', function () {
     document.location.href = "index.html";
 });
 
-/*Function verification si le champ de formulaire est vide*/
+/*Fonction verification si le champ de formulaire est vide*/
 function verifChampVide(champsArray) {
     for(let elem of champsArray){
         var varBoolean1 = true;
@@ -95,12 +102,14 @@ function verifChampVide(champsArray) {
         verifChampSaisie(champsTousArray);
     };
 };
-/*Function verification la saisie du formulaire */
+/*Fonction verification la saisie du formulaire */
 function verifChampSaisie(champsArray){
     let objDataUser ={};
     var varBoolean = true;
     for(let elem of champsArray){
         let regExprUserData = elem.value;
+        /*Les champs "nom", "prenom" et "ville" ne peuvent contenir que des lettres latines majuscules et minuscules et des 
+        signes diacritiques de l'alphabet français*/ 
         if(elem.name == 'nom' || elem.name == 'prenom' || elem.name == 'ville'){
             if(!/^[a-zA-Z-áàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ]+$/.test(regExprUserData)){
                 varBoolean = false;
@@ -121,7 +130,8 @@ function verifChampSaisie(champsArray){
         }
         else if(elem.name == 'adresse'){
             objDataUser.adress = elem.value;
-        }
+        } 
+        /*le champ "code postal" ne peut contenir que des chiffres ou des lettres de l'alphabet latin */
         else if(elem.name == 'code_postal'){
             if(!/^[a-zA-Z0-9]+$/.test(regExprUserData)){
                 
@@ -134,6 +144,7 @@ function verifChampSaisie(champsArray){
             }
         }
         else if(elem.name == 'numero'){
+            /*le champ "Numéro de téléphone" ne peut contenir que des chiffres ou etre vide */
                 if (!(regExprUserData == "") && !(/^[0-9\+]+$/.test(regExprUserData))){
                 alert('Le champ "Numéro de téléphone" est invalide. Veuillez verifier la saisie');
                 varBoolean = false;
@@ -141,6 +152,7 @@ function verifChampSaisie(champsArray){
             };
         }
         else if(elem.name == 'email'){
+             /*le champ "email" doit avoir la forme suivante ___@___.___ */
             if(!/^.+\@+.+\..+$/.test(regExprUserData)){
                 alert('Le champ "Email" est invalide. Veuillez verifier la saisie');
                 varBoolean = false;
@@ -149,6 +161,7 @@ function verifChampSaisie(champsArray){
         };
     };
     localStorage.setItem('userData', JSON.stringify(objDataUser));
+    /*Si tous les champs sont corrects =>rediriger vers la page "confirmation"*/
     if(varBoolean){
         document.location.href = "confirmation.html";
     }
