@@ -602,7 +602,14 @@ th, td {
         
     }
  }
- 
+ .fa-minus-circle{
+     margin-right: 10px;
+     color: rgb(66, 66, 65);
+ }
+ .fa-plus-circle{
+     margin-left: 10px;
+     color: rgb(66, 66, 65);
+ }
  .videProduct{
      display: none;
     @media  screen and(max-width:600px) {

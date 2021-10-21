@@ -786,6 +786,16 @@ th {
   }
 }
 
+.fa-minus-circle {
+  margin-right: 10px;
+  color: #424241;
+}
+
+.fa-plus-circle {
+  margin-left: 10px;
+  color: #424241;
+}
+
 .videProduct {
   display: none;
 }

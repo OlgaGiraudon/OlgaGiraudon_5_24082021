@@ -49,16 +49,33 @@ else{
        let tr = document.createElement('tr');
        createTableRows ('cameraNameTd', product.name, tr );
        createTableRows ('cameraSizeTd', product.size, tr );
-       createTableRows ('quantityTd', product.number, tr );
+       createTableRows ('quantityTd', '<i class="fas fa-minus-circle"></i>'+ '  ' + product.number +' <i class="fas fa-plus-circle"></i>', tr );
        createTableRows ('priceUnit', product.prixU + ' €', tr );
        createTableRows ('priceTotal', product.prixU*product.number, tr );
        createTableRows ('deleteProduct', '<i class="fas fa-trash suppression"><span id="prodId"></span></i>', tr );
        tableProducts.appendChild(tr);
-        calculPrixTotal +=product.prixU*product.number;
-
-       
-       
+        calculPrixTotal +=product.prixU*product.number; 
+             
     };
+    /*Changer la quantité*/
+    let ikonPlus = document.querySelectorAll('.fa-plus-circle');
+    ikonPlus.forEach((element,index) => {
+        element.addEventListener('click', function () {
+           cartProductsArray[index].number++;
+           localStorage.setItem('cartProducts',JSON.stringify(cartProductsArray));
+           location.reload();
+        })
+    });
+    let ikonMinus = document.querySelectorAll('.fa-minus-circle');
+    ikonMinus.forEach((element,index) => {
+        element.addEventListener('click', function () {
+           if(cartProductsArray[index].number >0){
+           cartProductsArray[index].number--;
+           localStorage.setItem('cartProducts',JSON.stringify(cartProductsArray));
+           location.reload();
+           };
+        });
+    });
     /*Suppression du produit du tableau*/
     let suppressionItem = document.querySelectorAll('.suppression');  
     suppressionItem.forEach((element,index) => {
