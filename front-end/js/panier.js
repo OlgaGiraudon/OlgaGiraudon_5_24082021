@@ -150,7 +150,7 @@ function verifChampSaisie(champsArray){
         } 
         /*le champ "code postal" ne peut contenir que des chiffres ou des lettres de l'alphabet latin */
         else if(elem.name == 'code_postal'){
-            if(!/^[a-zA-Z0-9]+$/.test(regExprUserData)){
+            if(!/^[ABab0-9]+$/.test(regExprUserData)){
                 
                 alert('Le champ "Code postal" est invalide. Veuillez verifier la saisie');
                 varBoolean = false;

@@ -602,13 +602,37 @@ th, td {
         
     }
  }
+ .quantityTd{
+    @media  screen and(max-width:715px) {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+ }
  .fa-minus-circle{
      margin-right: 10px;
      color: rgb(66, 66, 65);
+     @media  screen and(max-width:715px) {
+        margin-right: 2%;
+        font-size: 15px;
+    }
+    @media  screen and(max-width:600px) {
+        margin-right: 7%;
+        font-size: 17px;
+    }
  }
+
  .fa-plus-circle{
      margin-left: 10px;
      color: rgb(66, 66, 65);
+     @media  screen and(max-width:715px) {
+        margin-left: 2%;
+        font-size: 15px;
+    }
+    @media  screen and(max-width:600px) {
+        margin-left: 7%;
+        font-size: 17px;
+    }
  }
  .videProduct{
      display: none;

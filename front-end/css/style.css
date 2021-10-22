@@ -786,14 +786,50 @@ th {
   }
 }
 
+@media screen and (max-width: 715px) {
+  .quantityTd {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
 .fa-minus-circle {
   margin-right: 10px;
   color: #424241;
 }
 
+@media screen and (max-width: 715px) {
+  .fa-minus-circle {
+    margin-right: 2%;
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .fa-minus-circle {
+    margin-right: 7%;
+    font-size: 17px;
+  }
+}
+
 .fa-plus-circle {
   margin-left: 10px;
   color: #424241;
+}
+
+@media screen and (max-width: 715px) {
+  .fa-plus-circle {
+    margin-left: 2%;
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .fa-plus-circle {
+    margin-left: 7%;
+    font-size: 17px;
+  }
 }
 
 .videProduct {
