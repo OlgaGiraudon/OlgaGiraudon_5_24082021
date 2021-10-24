@@ -4,31 +4,29 @@ let url = 'http://localhost:3000/api/cameras';
 //fonction avec URL et élément DOM en paramètres, résultat - code HTML//
 function getProducts(adresseAPI, gridOfProducts){
     fetch (adresseAPI)
-    .then((response)=>
-    response.json()
-    )
-    .then((data) => {
+    .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
         let imgHTML ='';
-        if(data){ 
-            for (let i in data){
+        if(data.length>0){
+            for (let productObj of data){
                 imgHTML = '<div class="divProduit">' +
-                '<a class="transparent" href ="produit.html?id='+ data[i]._id +'">'+
-                '<img class = "imageProduits" src="' + data[i].imageUrl + '" width ="100%" height = "265px"></a>'+
-                    '<div class="nameProduit"><a href ="produit.html?id='+ data[i]._id +'">'+
-                                    '<h3>'+ data[i].name +'</h3></a></div>'+
+                '<a class="transparent" href ="produit.html?id='+ productObj._id +'">'+
+                '<img class = "imageProduits" src="' + productObj.imageUrl + '" width ="100%" height = "265px"></a>'+
+                    '<div class="nameProduit"><a href ="produit.html?id='+ productObj._id +'">'+
+                                    '<h3>'+ productObj.name +'</h3></a></div>'+
                     '</div>';
                     
                 gridOfProducts.innerHTML += imgHTML;
+              
             }  
-        }else {
-            imgHTML = 'Pas de produit';
+        } else{
+            imgHTML = '<p id="messageIndex">Aucun produit est disponible</p>';
             gridOfProducts.innerHTML = imgHTML;
         }
-    
-
-    
-});
-}
+        });
+    }
 getProducts(url, gridProduit);
 
 

@@ -17,6 +17,7 @@ let userPhoneNumber = document.querySelector('#userPhoneNumber');
 let userMail = document.querySelector('#userMail');
 let champsObligatoiresArray = [userSurname,userName,userAdress, userCity, userPostalCode, userMail];
 let champsTousArray = [userSurname,userName,userAdress, userCity, userPostalCode, userPhoneNumber, userMail];
+let products = [];
 
 /* Fonction qui crée des colonnes du tableau */
 function createTableRows (className, valeurRow, tr ){
@@ -40,12 +41,13 @@ if(cartProducts === null || JSON.parse(cartProducts).length == 0){
 else{
     
     messageVide.classList.add('small');
-   
+    
     let cartProductsArray = JSON.parse(cartProducts);
     /*Création des lignes et colonnes du tableau pour chaque élément dans cartProductsArrays*/
     for(let i =0; i< cartProductsArray.length; i++){
         
        let product = cartProductsArray[i];
+       products.push(product.idProduit);
        let tr = document.createElement('tr');
        createTableRows ('cameraNameTd', product.name, tr );
        createTableRows ('cameraSizeTd', product.size, tr );
@@ -174,12 +176,26 @@ function verifChampSaisie(champsArray){
                 alert('Le champ "Email" est invalide. Veuillez verifier la saisie');
                 varBoolean = false;
                 break;
-            };
+            }
+            else{
+                objDataUser.email = elem.value;
+            }
         };
     };
     localStorage.setItem('userData', JSON.stringify(objDataUser));
+    let contact={
+        firstName: objDataUser.name,
+        lastName: objDataUser.surname,
+        address: objDataUser.adress,
+        city: objDataUser.city,
+        email : objDataUser.email
+    }
+    
+   
+    putOrderInApi(contact, products);
+
     /*Si tous les champs sont corrects =>rediriger vers la page "confirmation"*/
-    if(varBoolean){
+   if(varBoolean){
         document.location.href = "confirmation.html";
     }
    
@@ -189,4 +205,25 @@ buttonAcheter.addEventListener('click', function(){
     verifChampVide(champsObligatoiresArray);
     
 });
+
+function putOrderInApi(contact, products) {
+    const data = {contact, products };
+
+fetch('http://localhost:3000/api/cameras/order', {
+  method: 'POST', // or 'PUT'
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(data),
+})
+.then(response => response.json())
+.then(data => {
+ localStorage.setItem('idCommand', data.orderId);
+})
+.catch((error) => {
+  console.error('Error:', error);
+});
+
+
+}
 
