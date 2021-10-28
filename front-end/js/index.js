@@ -11,10 +11,13 @@ function getProducts(adresseAPI, gridOfProducts){
         let imgHTML ='';
         if(data.length>0){
             for (let productObj of data){
+                let url = new URLSearchParams();
+                url.set('id',productObj._id );
+                urlProduit = 'produit.html?'+ url.toString();
                 imgHTML = '<div class="divProduit">' +
-                '<a class="transparent" href ="produit.html?id='+ productObj._id +'">'+
+                '<a class="transparent" href ="' + urlProduit + '">'+
                 '<img class = "imageProduits" src="' + productObj.imageUrl + '" width ="100%" height = "265px"></a>'+
-                    '<div class="nameProduit"><a href ="produit.html?id='+ productObj._id +'">'+
+                    '<div class="nameProduit"><a href ="'+ urlProduit +'">'+
                                     '<h3>'+ productObj.name +'</h3></a></div>'+
                     '</div>';
                     
@@ -22,7 +25,7 @@ function getProducts(adresseAPI, gridOfProducts){
               
             }  
         } else{
-            imgHTML = '<p id="messageIndex">Aucun produit est disponible</p>';
+            imgHTML = '<p id="messageIndex">Aucun produit n\'est disponible</p>';
             gridOfProducts.innerHTML = imgHTML;
         }
         });

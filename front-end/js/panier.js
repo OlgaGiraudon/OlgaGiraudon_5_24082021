@@ -190,13 +190,9 @@ function verifChampSaisie(champsArray){
         city: objDataUser.city,
         email : objDataUser.email
     }
-    
-   
-    putOrderInApi(contact, products);
-
     /*Si tous les champs sont corrects =>rediriger vers la page "confirmation"*/
    if(varBoolean){
-        document.location.href = "confirmation.html";
+       putOrderInApi(contact, products);
     }
    
 };
@@ -210,7 +206,7 @@ function putOrderInApi(contact, products) {
     const data = {contact, products };
 
 fetch('http://localhost:3000/api/cameras/order', {
-  method: 'POST', // or 'PUT'
+  method: 'POST',
   headers: {
     'Content-Type': 'application/json',
   },
@@ -219,6 +215,7 @@ fetch('http://localhost:3000/api/cameras/order', {
 .then(response => response.json())
 .then(data => {
  localStorage.setItem('idCommand', data.orderId);
+ document.location.href = "confirmation.html";
 })
 .catch((error) => {
   console.error('Error:', error);
